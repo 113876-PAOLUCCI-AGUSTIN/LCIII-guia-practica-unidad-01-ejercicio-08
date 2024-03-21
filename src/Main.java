@@ -2,20 +2,33 @@
 * 8. Ingresar 10 números por teclado, informar su suma y promedio.
 */
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Double sumaTotal = 0.0;
-        Integer cantNumerosIngresados = 10;
 
+        int lengthArray = 10;
         Scanner input = new Scanner(System.in);
-        for (int i = 0; i < cantNumerosIngresados; i++) {
-            sumaTotal = sumaTotal + input.nextDouble();
+
+        Double[] numbers = new Double[lengthArray];
+
+        // Carga del array.
+        for (int i=0; i<numbers.length; i++) {
+            Double numero = input.nextDouble();
+            numbers[i] = numero;
         }
-        Double  promedio = sumaTotal / cantNumerosIngresados;
-        System.out.println("La suma de los números es: "+sumaTotal);
-        System.out.println("Y el promedio: "+promedio);
+
+        Double suma = 0.0;
+
+        // Suma de los números de cada posición en un ACUMULADOR.
+        for (int i=0; i<numbers.length; i++) {
+            suma = suma + numbers[i];
+        }
+
+        // Calculo de promedio.
+        Double promedio = (suma/ numbers.length);
+
+        System.out.println("La suma de los números es: "+suma);
+        System.out.println("El promedio es: "+promedio);
     }
 }
