@@ -9,18 +9,20 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        int cantidadNumerosIngresados = 10;
+        int cantidadNumerosAingresar = 10;
         
         ArrayList<Integer> numbers = new ArrayList<>();
-        for (int i=0; i < cantidadNumerosIngresados; i++){
-            Integer ingreso = input.nextInt();
-            numbers.add(ingreso);
+        for (int i=0; i < cantidadNumerosAingresar; i++){
+            numbers.add(input.nextInt());
         }
+
         Double sumaTotal = 0.0;
         for (int i =0; i < numbers.size(); i++) {
             sumaTotal += numbers.get(i);
         }
-        Double promedio = sumaTotal / cantidadNumerosIngresados;
+
+        Double promedio = sumaTotal / cantidadNumerosAingresar;
+
         System.out.println("La suma de los números es: "+sumaTotal);
         System.out.println("Y el promedio: "+promedio);
     }
